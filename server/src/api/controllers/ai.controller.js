@@ -13,7 +13,7 @@ const getAISuggestions = async (req, res, next) => {
     console.log(`📝 [AI-SUGGESTIONS] User ID: ${userId}`);
 
     if (!GEMINI_API_KEY) {
-      console.log(`❌ [AI-SUGGESTIONS] Gemini API key not configured`);
+      console.log(`❌ [AI-SUGGESTIONS] Vikas bhai ki key not configured`);
       throw new ApiError(500, 'AI service is not configured');
     }
     console.log(`✅ [AI-SUGGESTIONS] Gemini API key is configured`);
