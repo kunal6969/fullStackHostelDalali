@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#E0E7FF" />
+    <meta
+      name="description"
+      content="Hostel Dalali - MNIT Hostel Room Exchange Platform"
+    />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <title>Hostel Dalali</title>
+  
+<style>
+    .logo-font {
+        font-family: 'Poppins', sans-serif;
+    }
+    @keyframes fade-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    .animate-fade-in {
+        animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    @keyframes pop-in {
+        0% { opacity: 0; transform: scale(0.95); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    .animate-pop-in { 
+        animation: pop-in 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        will-change: transform, opacity;
+    }
+
+    /* For Modals */
+    @keyframes modal-backdrop-fade-in {
+        0% { backdrop-filter: blur(0px); background-color: rgba(0,0,0,0); }
+        100% { backdrop-filter: blur(4px); background-color: rgba(0,0,0,0.7); }
+    }
+    .animate-modal-backdrop {
+        animation: modal-backdrop-fade-in 0.3s ease-out both;
+    }
+
+    @keyframes modal-content-pop-in {
+        0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+        100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .animate-modal-content {
+        animation: modal-content-pop-in 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+    
+</style>
+<script>
+    /**
+     * DARK MODE INITIALIZATION SCRIPT:
+     * This script runs synchronously at the very start of the page load.
+     * Its purpose is to prevent a "flash of unstyled content" (FOUC) where the page
+     * briefly appears in the default light theme before switching to dark mode.
+     * It checks localStorage for a user's saved preference, and if not found,
+     * it respects the user's operating system preference via `prefers-color-scheme`.
+     */
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.7.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-100 text-slate-800 dark:bg-gray-950 dark:text-slate-200 min-h-screen antialiased">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
